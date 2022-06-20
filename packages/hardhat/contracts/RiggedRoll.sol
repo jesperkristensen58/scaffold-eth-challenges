@@ -21,11 +21,10 @@ contract RiggedRoll is Ownable {
         bytes32 hash = keccak256(abi.encodePacked(prevHash, address(diceGame), diceGame.nonce()));
         uint256 roll = uint256(hash) % 16;
 
-        if (roll > 2 ) {
-            return;
-        }
+        if (roll > 2)
+            revert();
 
-        diceGame.rollTheDice{value: 0.0021 ether}();
+        diceGame.rollTheDice{value: 0.002 ether}();
     }
 
     function withdraw(address _addr, uint256 _amount) external onlyOwner {
