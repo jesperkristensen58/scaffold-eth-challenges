@@ -9,19 +9,16 @@ module.exports = async ({ getNamedAccounts, deployments, getChainId }) => {
 
   const diceGame = await ethers.getContract("DiceGame", deployer);
 
-  /*
   await deploy("RiggedRoll", {
    from: deployer,
    args: [diceGame.address],
    log: true,
-  });
-  */
+  });  
 
-  //const riggedRoll = await ethers.getContract("RiggedRoll", deployer);
+  const riggedRoll = await ethers.getContract("RiggedRoll", deployer);
 
-  //const ownershipTransaction = await riggedRoll.transferOwnership("** YOUR FRONTEND ADDRESS **");
+  const ownershipTransaction = await riggedRoll.transferOwnership("0x8b1D5d73D90592E4E6DFb289c31AD5198A0891ec");
   
-
 };
 
 function sleep(ms) {
