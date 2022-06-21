@@ -471,21 +471,20 @@ function App(props) {
         <Switch>
           <Route exact path="/">
 
-            {/* Uncomment below to view front end */}
-            {/* { readContracts && readContracts.DEX && address && localProvider ?
+             { readContracts && readContracts.DEX && address && localProvider ?
                 <Dex
-              address={address}
-              tx={tx}
-              writeContracts={writeContracts}
-              localProvider={localProvider}
-              mainnetProvider={mainnetProvider}
-              readContracts={readContracts}
-              blockExplorer={blockExplorer}
-              contractConfig={contractConfig}
-              signer={userSigner}
-              price={price}
-            /> : ""
-             }  */}
+                  address={address}
+                  tx={tx}
+                  writeContracts={writeContracts}
+                  localProvider={localProvider}
+                  mainnetProvider={mainnetProvider}
+                  readContracts={readContracts}
+                  blockExplorer={blockExplorer}
+                  contractConfig={contractConfig}
+                  signer={userSigner}
+                  price={price}
+                /> : ""
+          }
            
           </Route>
 
@@ -499,12 +498,14 @@ function App(props) {
               contractConfig={contractConfig}
             />
             <Contract
+              title={"🎈 Balloons"}
               name="Balloons"
               signer={userSigner}
               provider={localProvider}
               address={address}
               blockExplorer={blockExplorer}
               contractConfig={contractConfig}
+              show={["balanceOf", "approve"]}
             />
           </Route>
         </Switch>
